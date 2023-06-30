@@ -1,0 +1,49 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: ./nginx
+    image: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app1
+      - app2
+      # Add more dependencies for additional instances
+
+  app1:
+    build:
+      context: .
+    ports:
+      - "3017:3017"
+    environment:
+      - AUTH0_API_URL=https://dev-5jfpmtrs.us.auth0.com
+      - AUTH0_CLIENT_ID=VkC5IXa5qcxVRIQ7vjY6asesj20VE1P4
+      - AUTH0_CLIENT_SECRET=Ra8qAKo9I3nO0FApSz0OMu0sgpkb2LqSXyYJF3jjSnT3JER1SbWKdau4ko74WRkE
+      - MONGODB_DATABASE_URL=mongodb+srv://jobfinder:y5XfyL4g0GUn0h3E@cluster1.rcnfvff.mongodb.net/jobfinder?retryWrites=true&w=majority
+      - JWT_SECRET=job-finder-first-ver
+      - JWT_EXPIRES="2 days"
+      - APP_PORT=3017
+      - APP_BASE_URL=/api/
+      - DOC_BASE_URL=/docs/
+      - SEND_GRID_API_KEY=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
+
+    # Add more services for additional instances
+
+  app2:
+    build:
+      context: .
+    ports:
+      - "3018:3018"
+    environment:
+      - AUTH0_API_URL=https://dev-5jfpmtrs.us.auth0.com
+      - AUTH0_CLIENT_ID=VkC5IXa5qcxVRIQ7vjY6asesj20VE1P4
+      - AUTH0_CLIENT_SECRET=Ra8qAKo9I3nO0FApSz0OMu0sgpkb2LqSXyYJF3jjSnT3JER1SbWKdau4ko74WRkE
+      - MONGODB_DATABASE_URL=mongodb+srv://jobfinder:y5XfyL4g0GUn0h3E@cluster1.rcnfvff.mongodb.net/jobfinder?retryWrites=true&w=majority
+      - JWT_SECRET=job-finder-first-ver
+      - JWT_EXPIRES="2 days"
+      - APP_PORT=3018
+      - APP_BASE_URL=/api/
+      - DOC_BASE_URL=/docs/
+      - SEND_GRID_API_KEY=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
+    # Add more services for additional instances
