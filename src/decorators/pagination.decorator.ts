@@ -4,7 +4,7 @@ import {
   ExecutionContext,
 } from "@nestjs/common";
 import { ApiQuery } from "@nestjs/swagger";
-import { DEFAULT_PAGINATION } from "src/shared/model/type";
+import { DEFAULT_PAGINATION } from "src/shared/type";
 
 export const Pagination = createParamDecorator(
   (data: { pageSize: number }, ctx: ExecutionContext) => {

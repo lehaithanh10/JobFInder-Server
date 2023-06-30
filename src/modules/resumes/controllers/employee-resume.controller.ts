@@ -20,7 +20,7 @@ import {
   ApiResponse,
   ApiTags,
 } from "@nestjs/swagger";
-import { ERoleName } from "src/shared/model/type";
+import { ERoleName } from "src/shared/type";
 import { Roles } from "src/decorators/role.decorator";
 import { RolesGuard } from "src/guards/role.guard";
 import { UploadCVDto } from "../dto/upload-cv.dto";

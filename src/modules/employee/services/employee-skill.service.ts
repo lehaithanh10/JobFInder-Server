@@ -6,7 +6,7 @@ import {
   CreateEmployeeSkillRequestDto,
   EditEmployeeSkillDto,
 } from "../dto/employee-skill.dto";
-import { ECollectionName } from "src/shared/model/type";
+import { ECollectionName } from "src/shared/type";
 import { EmployeeDocument } from "../employee.model";
 
 @Injectable()

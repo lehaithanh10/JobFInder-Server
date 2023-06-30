@@ -16,7 +16,7 @@ import {
 } from "@nestjs/swagger";
 import { Roles } from "src/decorators/role.decorator";
 import { RolesGuard } from "src/guards/role.guard";
-import { ERoleName, IPagination } from "src/shared/model/type";
+import { ERoleName, IPagination } from "src/shared/type";
 import { EmployerFilterApplicationDto } from "../dto/application-filter.dto";
 import { EmployerApplicationService } from "../services/employer-application.service";
 import { InjectExtraInfoToApplicationInterceptor } from "src/interceptors/application/inject-resume-data-to-application.interceptor";

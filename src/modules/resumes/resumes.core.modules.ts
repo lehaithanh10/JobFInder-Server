@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { ECollectionName } from "src/shared/model/type";
+import { ECollectionName } from "src/shared/type";
 import { ResumeDocument } from "./resume.model";
 
 @Module({

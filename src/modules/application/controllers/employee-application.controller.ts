@@ -11,7 +11,7 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { EmployeeApplicationService } from "../services/employee-application.service";
 import { CreateApplicationDto } from "../dto/create-application.dto";
 import { Roles } from "src/decorators/role.decorator";
-import { ERoleName } from "src/shared/model/type";
+import { ERoleName } from "src/shared/type";
 import { RolesGuard } from "src/guards/role.guard";
 import { InjectExtraInfoToApplicationInterceptor } from "src/interceptors/application/inject-resume-data-to-application.interceptor";
 import { User } from "src/decorators/user.decorator";

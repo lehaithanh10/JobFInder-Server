@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional, OmitType } from "@nestjs/swagger";
 import { EUserIdentifierType } from "src/modules/user/user.type";
-import { ERoleName } from "src/shared/model/type";
+import { ERoleName } from "src/shared/type";
 
 export class AuthLoginResponseDto {
   @ApiProperty()

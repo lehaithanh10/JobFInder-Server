@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { ECollectionName } from "src/shared/model/type";
+import { ECollectionName } from "src/shared/type";
 import { IUserDataSignWithJWT } from "../auth/auth.type";
 import { UserLoginDto, UserRegisterDto } from "../auth/dto/auth.dto";
 import { EmployeeDocument } from "../employee/employee.model";

@@ -1,4 +1,4 @@
-import { ERoleName } from "src/shared/model/type";
+import { ERoleName } from "src/shared/type";
 
 export enum EUserIdentifierType {
   CREDENTIAL = "credential",
