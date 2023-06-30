@@ -20,7 +20,7 @@ import { GetEmployerQueryDto } from "../dto/get-employer.dto";
 import { User } from "src/decorators/user.decorator";
 import { IUserData } from "../../user/user.type";
 import { Roles } from "src/decorators/role.decorator";
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "src/shared/model/type";
 import { RolesGuard } from "src/guards/role.guard";
 import { EmployerResponseDto } from "../dto/employer-response.dto";
 

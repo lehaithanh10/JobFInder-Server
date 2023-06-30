@@ -6,7 +6,7 @@ import {
 } from "@nestjs/common";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { IPagination } from "src/shared/type";
+import { IPagination } from "src/shared/model/type";
 
 @Injectable()
 export class PaginationInterceptor implements NestInterceptor {

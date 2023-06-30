@@ -1,6 +1,6 @@
-import { ApiProperty, ApiPropertyOptional, OmitType } from '@nestjs/swagger';
-import { EUserIdentifierType } from 'src/modules/user/user.type';
-import { ERoleName } from 'src/shared/type';
+import { ApiProperty, ApiPropertyOptional, OmitType } from "@nestjs/swagger";
+import { EUserIdentifierType } from "src/modules/user/user.type";
+import { ERoleName } from "src/shared/model/type";
 
 export class AuthLoginResponseDto {
   @ApiProperty()
@@ -28,6 +28,6 @@ export class AuthLoginResponseDto {
 export class AuthRegisterResponseDto extends AuthLoginResponseDto {}
 
 export class UserResponseDto extends OmitType(AuthLoginResponseDto, [
-  'name',
-  'accessToken',
+  "name",
+  "accessToken",
 ]) {}

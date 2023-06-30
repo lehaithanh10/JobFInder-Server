@@ -1,4 +1,4 @@
-import { ERoleName } from 'src/shared/type';
+import { ERoleName } from "src/shared/model/type";
 
 export const checkIsEmployerCredential = (data: { role: ERoleName }) => {
   return data.role === ERoleName.EMPLOYERS;

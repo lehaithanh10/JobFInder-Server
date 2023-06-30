@@ -1,5 +1,5 @@
-import { SetMetadata } from '@nestjs/common';
-import { ERoleName } from 'src/shared/type';
+import { SetMetadata } from "@nestjs/common";
+import { ERoleName } from "src/shared/model/type";
 
-export const ROLES_KEY = 'JOB_FINDER_ROLE_KEY';
+export const ROLES_KEY = "JOB_FINDER_ROLE_KEY";
 export const Roles = (...roles: ERoleName[]) => SetMetadata(ROLES_KEY, roles);

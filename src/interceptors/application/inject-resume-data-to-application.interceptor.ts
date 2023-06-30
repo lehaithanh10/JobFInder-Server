@@ -12,7 +12,7 @@ import { ApplicationResponseDto } from "src/modules/application/dto/application-
 import { EmployeeDocument } from "src/modules/employee/employee.model";
 import { JobPostDocument } from "src/modules/job-post/job-post.model";
 import { ResumeDocument } from "src/modules/resumes/resume.model";
-import { ECollectionName } from "src/shared/type";
+import { ECollectionName } from "src/shared/model/type";
 
 @Injectable()
 export class InjectExtraInfoToApplicationInterceptor

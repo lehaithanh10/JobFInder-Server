@@ -1,4 +1,4 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import {
   IsEmail,
   IsEnum,
@@ -7,16 +7,16 @@ import {
   IsPhoneNumber,
   IsString,
   ValidateIf,
-} from 'class-validator';
-import { EUserIdentifierType } from 'src/modules/user/user.type';
-import { ERoleName } from 'src/shared/type';
+} from "class-validator";
+import { EUserIdentifierType } from "src/modules/user/user.type";
+import { ERoleName } from "src/shared/model/type";
 
 export class UserLoginDto {
   @ApiPropertyOptional()
   @ValidateIf((d: UserLoginDto) =>
     [EUserIdentifierType.CREDENTIAL, EUserIdentifierType.GOOGLE].includes(
-      d.identifierType,
-    ),
+      d.identifierType
+    )
   )
   @IsNotEmpty()
   @IsEmail()
@@ -25,7 +25,7 @@ export class UserLoginDto {
 
   @ApiPropertyOptional()
   @ValidateIf(
-    (d: UserLoginDto) => d.identifierType === EUserIdentifierType.CREDENTIAL,
+    (d: UserLoginDto) => d.identifierType === EUserIdentifierType.CREDENTIAL
   )
   @IsNotEmpty()
   @IsString()
@@ -38,7 +38,7 @@ export class UserLoginDto {
 
   @ApiPropertyOptional()
   @ValidateIf(
-    (d: UserLoginDto) => d.identifierType !== EUserIdentifierType.CREDENTIAL,
+    (d: UserLoginDto) => d.identifierType !== EUserIdentifierType.CREDENTIAL
   )
   @IsNotEmpty()
   @IsString()

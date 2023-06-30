@@ -10,7 +10,7 @@ import { from } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import { EmployeeInfoResponseDto } from "src/modules/employee/dto/employee-info.dto";
 import { ResumeDocument } from "src/modules/resumes/resume.model";
-import { ECollectionName } from "src/shared/type";
+import { ECollectionName } from "src/shared/model/type";
 
 @Injectable()
 export class InjectResumesToEmployeeInterceptor implements NestInterceptor {

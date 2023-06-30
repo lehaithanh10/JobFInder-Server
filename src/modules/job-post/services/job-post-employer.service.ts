@@ -5,7 +5,7 @@ import {
 } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { ECollectionName } from "src/shared/type";
+import { ECollectionName } from "src/shared/model/type";
 import { CreateJobPostDto } from "../dto/create-job-post.dto";
 import { UpdateJobPostDto } from "../dto/update-job-post.dto";
 import { JobPostDocument } from "../job-post.model";

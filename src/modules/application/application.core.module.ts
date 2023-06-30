@@ -1,7 +1,7 @@
-import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { ECollectionName } from 'src/shared/type';
-import { ApplicationsDocument } from './application.model';
+import { Module } from "@nestjs/common";
+import { MongooseModule } from "@nestjs/mongoose";
+import { ECollectionName } from "src/shared/model/type";
+import { ApplicationsDocument } from "./application.model";
 
 @Module({
   imports: [

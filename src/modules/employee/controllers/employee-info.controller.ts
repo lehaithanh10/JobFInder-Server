@@ -18,7 +18,7 @@ import {
 } from "@nestjs/swagger";
 import { RolesGuard } from "src/guards/role.guard";
 import { Roles } from "src/decorators/role.decorator";
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "src/shared/model/type";
 import { User } from "src/decorators/user.decorator";
 import { IUserData } from "../../user/user.type";
 import { InjectResumesToEmployeeInterceptor } from "src/interceptors/employee/inject-resume-data-to-employee.interceptor";

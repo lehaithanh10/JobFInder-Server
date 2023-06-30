@@ -22,7 +22,7 @@ import {
   UpdateJobPostQueryDto,
 } from "../dto/update-job-post.dto";
 import { JobPostResponseDto } from "../dto/job-post-response.dto";
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "src/shared/model/type";
 import { Roles } from "src/decorators/role.decorator";
 import { RolesGuard } from "src/guards/role.guard";
 import { User } from "src/decorators/user.decorator";
