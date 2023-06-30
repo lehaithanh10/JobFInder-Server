@@ -7,7 +7,7 @@ import {
   EditWorkingExperienceRequestDto,
 } from "../dto/employee-working-experience.dto";
 import { EmployeeDocument } from "../employee.model";
-import { ECollectionName } from "src/shared/type";
+import { ECollectionName } from "../../../shared/type";
 
 @Injectable()
 export class EmployeeWorkingExperienceService {

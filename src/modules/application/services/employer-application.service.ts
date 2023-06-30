@@ -5,7 +5,7 @@ import {
 } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { ECollectionName, IPagination } from "src/shared/type";
+import { ECollectionName, IPagination } from "../../../shared/type";
 import { ApplicationsDocument } from "../application.model";
 import { EApplicationStatus } from "../application.types";
 import { ObjectId } from "bson";

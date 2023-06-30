@@ -8,7 +8,7 @@ import {
 } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 
-import { IPagination } from "src/shared/type";
+import { IPagination } from "../../../shared/type";
 import {
   Pagination,
   PaginationSwaggerQuery,

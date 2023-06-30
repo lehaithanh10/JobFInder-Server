@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "../../../shared/type";
 const jwt = require("jsonwebtoken");
 
 @Injectable()

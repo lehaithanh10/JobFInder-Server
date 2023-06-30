@@ -1,4 +1,4 @@
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "../../shared/type";
 
 export interface IUserDataSignWithJWT {
   userId: string;

@@ -23,7 +23,7 @@ import {
   EmployeeSkillResponseDto,
 } from "../dto/employee-skill.dto";
 import { Roles } from "src/decorators/role.decorator";
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "../../../shared/type";
 import { RolesGuard } from "src/guards/role.guard";
 import { User } from "src/decorators/user.decorator";
 import { EmployeeSkillService } from "../services/employee-skill.service";

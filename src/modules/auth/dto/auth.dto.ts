@@ -9,7 +9,7 @@ import {
   ValidateIf,
 } from "class-validator";
 import { EUserIdentifierType } from "src/modules/user/user.type";
-import { ERoleName } from "src/shared/type";
+import { ERoleName } from "../../../shared/type";
 
 export class UserLoginDto {
   @ApiPropertyOptional()

@@ -15,7 +15,7 @@ import {
   PaginationSwaggerQuery,
 } from "src/decorators/pagination.decorator";
 import { PaginationInterceptor } from "src/interceptors/pagination/pagination.interceptor";
-import { IPagination } from "src/shared/type";
+import { IPagination } from "../../../shared/type";
 
 @ApiTags("user.job-post")
 @Controller("user/job-post")
