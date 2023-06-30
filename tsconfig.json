@@ -14,5 +14,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "strictNullChecks": false,
+    "resolveJsonModule": true
   },
 }

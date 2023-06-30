@@ -6,7 +6,7 @@ import { CreateResumeDto } from "../dto/create-resume.dto";
 import { UpdateResumeDto } from "../dto/update-resume.dto";
 import { ResumeDocument } from "../resume.model";
 import { EmployeeDocument } from "src/modules/employee/employee.model";
-import * as moment from "moment";
+const moment = require("moment");
 
 @Injectable()
 export class ResumesService {
