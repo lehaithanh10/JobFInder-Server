@@ -1,17 +1,17 @@
 version: "3"
 services:
-  nginx:
+  nginx-server:
     build:
       context: ./nginx
     image: nginx
     ports:
       - "80:80"
     depends_on:
-      - app1
-      - app2
+      - server1
+      - server2
       # Add more dependencies for additional instances
 
-  app1:
+  server1:
     build:
       context: .
     ports:
@@ -30,7 +30,7 @@ services:
 
     # Add more services for additional instances
 
-  app2:
+  server2:
     build:
       context: .
     ports:
