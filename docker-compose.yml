@@ -3,12 +3,14 @@ services:
   nginx-server:
     build:
       context: ./nginx
-    image: nginx
     ports:
       - "80:80"
     depends_on:
       - server1
       - server2
+    environment:
+      - API_KEY=680a5098ef80cdc387e60e8c39b413c9
+      - AMPLIFY_IMAGENAME=my-service-123
       # Add more dependencies for additional instances
 
   server1:

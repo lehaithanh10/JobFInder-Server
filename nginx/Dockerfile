@@ -1,5 +1,6 @@
-FROM nginx
+FROM joeljoos/nginx-amplify
 
-RUN rm /etc/nginx/conf.d/default.conf
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy nginx stub_status config
+COPY loadbalancing-server.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+# COPY loadbalancing-server.conf /etc/nginx/conf.d/loadbalancing-server.conf

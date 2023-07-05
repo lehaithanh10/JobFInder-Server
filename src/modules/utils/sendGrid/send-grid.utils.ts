@@ -2,7 +2,7 @@ import { config } from "dotenv";
 
 config();
 import { Injectable } from "@nestjs/common";
-import * as sendgrid from "@sendgrid/mail";
+const sendgrid = require("@sendgrid/mail");
 
 import { SendGridMessageDto } from "./dto/sendGrid.dto";
 
