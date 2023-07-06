@@ -3,6 +3,7 @@ import { Transform } from "class-transformer";
 import {
   ArrayMinSize,
   IsArray,
+  IsBoolean,
   IsNumber,
   IsOptional,
   IsString,
@@ -32,4 +33,10 @@ export class SearchJobPostDto {
   @IsString()
   @IsOptional()
   companyId?: string;
+
+  @ApiPropertyOptional()
+  @IsBoolean()
+  @Transform(({ value }) => Boolean(value))
+  @IsOptional()
+  active?: boolean;
 }

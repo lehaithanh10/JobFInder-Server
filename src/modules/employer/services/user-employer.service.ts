@@ -3,6 +3,7 @@ import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { ECollectionName, IPagination } from "../../../shared/type";
 import { EmployeeDocument } from "../../employee/employee.model";
+import { GetEmployerQueryDto } from "../dto/get-employer.dto";
 
 @Injectable()
 export class UserEmployerService {
@@ -33,8 +34,10 @@ export class UserEmployerService {
     };
   }
 
-  async getEmployer(employerId: string) {
-    const employer = await this.employerModel.findById(employerId);
+  async getEmployer(getEmployerQueryDto: GetEmployerQueryDto) {
+    const employer = !!getEmployerQueryDto.companyId
+      ? await this.employerModel.findById(getEmployerQueryDto.companyId)
+      : await this.employerModel.findOne(getEmployerQueryDto);
 
     if (!employer) {
       throw new NotFoundException("Employer not found");

@@ -16,6 +16,7 @@ import {
 } from "src/decorators/pagination.decorator";
 import { PaginationInterceptor } from "src/interceptors/pagination/pagination.interceptor";
 import { IPagination } from "../../../shared/type";
+import { InjectCompanyToJobInterceptor } from "src/interceptors/job/inject-company-data-to-job.interceptor";
 
 @ApiTags("user.job-post")
 @Controller("user/job-post")
@@ -24,7 +25,7 @@ export class JobPostController {
 
   @Get("/search")
   @PaginationSwaggerQuery()
-  @UseInterceptors(PaginationInterceptor)
+  @UseInterceptors(InjectCompanyToJobInterceptor, PaginationInterceptor)
   @ApiOperation({
     operationId: "userSearchJobPost",
     description: "Operation for user search job post",

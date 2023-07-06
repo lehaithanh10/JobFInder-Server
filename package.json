@@ -21,7 +21,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate:create": "sh -c 'ts-node --transpile-only -r tsconfig-paths/register node_modules/migrate-mongo/bin/migrate-mongo.js create $0 -f src/migrate-mongo-config.ts'",
     "migrate:down": "sh -c 'ts-node --transpile-only -r tsconfig-paths/register node_modules/migrate-mongo/bin/migrate-mongo.js down -f src/migrate-mongo-config.ts'",
-    "migrate:up": "sh -c 'ts-node --transpile-only -r tsconfig-paths/register node_modules/migrate-mongo/bin/migrate-mongo.js up -f src/migrate-mongo-config.ts'"
+    "migrate:up": "sh -c 'ts-node --transpile-only -r tsconfig-paths/register node_modules/migrate-mongo/bin/migrate-mongo.js up -f src/migrate-mongo-config.ts'",
+    "calculate-allocation": "docker-compose logs > logs.txt && node calculateAllocationRequest"
   },
   "dependencies": {
     "@google-cloud/firestore": "^6.5.0",

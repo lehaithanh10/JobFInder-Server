@@ -17,7 +17,7 @@ type MessageData = {
 export const getMessagePayload = (messageData: MessageData) => {
   if (messageData.notificationType === ENotificationType.REJECT_JOB) {
     return {
-      to: "haithuthanhtien@gmail.com",
+      to: messageData.payload.toEmail,
       from: "jobfinderofficialbetad@gmail.com",
       subject: `Notification from ${messageData.payload.jobName} - ${messageData.payload.companyName}`,
       text: "Sorry! We regret to inform that you have not been selected for this job. Please keep applying you will find a suitable one.",
@@ -37,20 +37,28 @@ export const getMessagePayload = (messageData: MessageData) => {
     };
   } else if (messageData.notificationType === ENotificationType.ACCEPT_JOB) {
     return {
-      to: "haithuthanhtien@gmail.com",
+      to: messageData.payload.toEmail,
       from: "jobfinderofficialbetad@gmail.com",
       subject: `Notification from ${messageData.payload.jobName} - ${messageData.payload.companyName}`,
-      html: `<p><span style="font-size: 18px;">Dear ${messageData.payload.toEmail},</span></p>
-      <p><span style="font-size: 18px;">We are thrilled to inform you that your application for the <strong>${messageData.payload.jobName}</strong> position at <strong>${messageData.payload.companyName}</strong> has been <strong>ACCEPTED</strong>!</span></p> 
+      html: `<p><span style="font-size: 18px;">Dear ${
+        messageData.payload.employeeName || messageData.payload.toEmail
+      },</span></p>
+      <p><span style="font-size: 18px;">We are thrilled to inform you that your application for the <strong>${
+        messageData.payload.jobName
+      }</strong> position at <strong>${
+        messageData.payload.companyName
+      }</strong> has been <strong>ACCEPTED</strong>!</span></p> 
       <p><span style="font-size: 18px;">On behalf of Job Finder team, we want to extend our warmest congratulations to you.</span></p>
-      <p><span style="font-size: 18px;">Your application and qualifications have stood out among the pool of candidates, and as a result, <strong>${messageData.payload.companyName}</strong> would like to invite you for an interview. This is a significant achievement and a testament to your skills, experience, and potential fit within the company.</span></p>
+      <p><span style="font-size: 18px;">Your application and qualifications have stood out among the pool of candidates, and as a result, <strong>${
+        messageData.payload.companyName
+      }</strong> would like to invite you for an interview. This is a significant achievement and a testament to your skills, experience, and potential fit within the company.</span></p>
       <p><span style="font-size: 18px;">Once again, congratulations on this well-deserved opportunity! Your advancement to the interview stage is a significant milestone, and we wish you the best of luck as you prepare. Embrace this moment and showcase your true potential.</span></p>
       <p><span style="font-size: 18px;">Best regards,</span></p>
       <p><span style="font-size: 18px;">Job Finder Team</span></p>`,
     };
   } else {
     return {
-      to: "haithuthanhtien@gmail.com",
+      to: messageData.payload.toEmail,
       from: "jobfinderofficialbetad@gmail.com",
       subject: "Welcome to Job Finder",
       html: `<p><span style="font-size: 18px;">Dear ${messageData.payload.toEmail},</span></p>

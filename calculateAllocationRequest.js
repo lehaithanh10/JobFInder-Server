@@ -3,7 +3,6 @@ const Chart = require("chart.js/auto");
 const fs = require("fs");
 
 const capitalizeFirstLetter = (str) => {
-  console.log("str", str);
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
@@ -11,7 +10,16 @@ const randColor = () => {
   return "#" + Math.floor(Math.random() * 16777215).toString(16);
 };
 
-const calculateNumberOfRequestAllocated = () => {};
+const calculateNumberOfRequestAllocated = () => {
+  const data = fs.readFileSync("./logs.txt", { encoding: "utf8", flag: "r" });
+  const server1 = (data.match(/jobfinder-be-server1/g) || []).length - 83;
+  const server2 = (data.match(/jobfinder-be-server2/g) || []).length - 83;
+  return {
+    server1,
+    server2,
+    total: server1 + server2,
+  };
+};
 
 const drawPieGraph = (analysisData) => {
   console.log(
@@ -58,8 +66,4 @@ const drawPieGraph = (analysisData) => {
   fs.writeFileSync("requestAllocation.png", canvas.toBuffer());
 };
 
-drawPieGraph({
-  server1: 40,
-  server2: 50,
-  total: 90,
-});
+drawPieGraph(calculateNumberOfRequestAllocated());

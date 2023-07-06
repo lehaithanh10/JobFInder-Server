@@ -23,7 +23,7 @@ import { GetEmployerQueryDto } from "../dto/get-employer.dto";
 export class EmployerController {
   constructor(private readonly userEmployerService: UserEmployerService) {}
 
-  @Get("/employer-information")
+  @Get("/list-employer-information")
   @PaginationSwaggerQuery()
   @UseInterceptors(PaginationInterceptor)
   @ApiResponse({
@@ -39,7 +39,7 @@ export class EmployerController {
     return this.userEmployerService.getListEmployer(pagination);
   }
 
-  @Get("/employer-information/:employerId")
+  @Get("/employer-information")
   @ApiOperation({
     operationId: "userGetEmployerInformation",
     description: "Operation for user get employer information",
@@ -49,7 +49,7 @@ export class EmployerController {
     status: HttpStatus.OK,
     type: EmployerResponseDto,
   })
-  findOne(@Param("employerId") employerId: string) {
-    return this.userEmployerService.getEmployer(employerId);
+  findOne(@Query() getEmployerQueryDto: GetEmployerQueryDto) {
+    return this.userEmployerService.getEmployer(getEmployerQueryDto);
   }
 }

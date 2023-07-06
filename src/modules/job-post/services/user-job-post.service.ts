@@ -62,6 +62,10 @@ export class UserJobPostService {
       mongoDbQuery.companyId = searchData.companyId;
     }
 
+    if (searchData.active) {
+      mongoDbQuery.active = searchData.active;
+    }
+
     const data = await this.jobPostModel.find(
       mongoDbQuery,
       {},

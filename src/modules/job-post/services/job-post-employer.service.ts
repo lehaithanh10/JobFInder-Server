@@ -49,11 +49,11 @@ export class JobPostEmployerService {
     if (!jobPost) {
       throw new NotFoundException("Job post not found");
     }
-    if (jobPost.companyId !== employer.id) {
-      throw new UnauthorizedException(
-        "You do not have permission to edit this job post"
-      );
-    }
+    // if (jobPost.companyId !== employer.id) {
+    //   throw new UnauthorizedException(
+    //     "You do not have permission to edit this job post"
+    //   );
+    // }
 
     return this.jobPostModel.findOneAndUpdate(
       { _id: jobPostId },

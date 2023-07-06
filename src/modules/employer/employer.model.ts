@@ -6,9 +6,6 @@ export class EmployerDocument extends BaseDocument {
   @Prop({ required: true, type: String, unique: true })
   email: string;
 
-  @Prop({ required: true, type: String })
-  password: string;
-
   @Prop()
   companyName?: string;
 
