@@ -4,8 +4,9 @@ import { EmployeeCoreModule } from "../employee/employee.core.module";
 import { EmployerCoreModule } from "../employer/employer.core.module";
 import { AuthUserUtil } from "./auth-user.utils";
 import { SendGridUtil } from "./sendGrid/send-grid.utils";
+import { CourierUtil } from "./courier/courier.utils";
 
-const providers = [AuthUserUtil, SendGridUtil];
+const providers = [AuthUserUtil, SendGridUtil, CourierUtil];
 
 @Module({
   imports: [AuthCoreModule, EmployeeCoreModule, EmployerCoreModule],

@@ -13,12 +13,13 @@ import { ReplyApplicationDto } from "../dto/reply-application.dto";
 import {
   ENotificationType,
   getMessagePayload,
-} from "src/modules/utils/sendGrid/getMessagePayload";
+} from "src/modules/utils/courier/getMessagePayload";
 import * as moment from "moment";
 import { SendGridUtil } from "src/modules/utils/sendGrid/send-grid.utils";
 import { ResumeDocument } from "src/modules/resumes/resume.model";
 import { EmployerFilterApplicationDto } from "../dto/application-filter.dto";
 import * as _ from "lodash";
+import { CourierUtil } from "src/modules/utils/courier/courier.utils";
 
 @Injectable()
 export class EmployerApplicationService {
@@ -28,7 +29,8 @@ export class EmployerApplicationService {
 
     @InjectModel(ECollectionName.APPLICATIONS)
     private readonly applicationModel: Model<ApplicationsDocument>,
-    private readonly sendGridUtil: SendGridUtil
+    private readonly sendGridUtil: SendGridUtil,
+    private readonly courierUtil: CourierUtil
   ) {}
 
   async filterApplication(
@@ -203,7 +205,7 @@ export class EmployerApplicationService {
       },
     });
 
-    await this.sendGridUtil.sendEmail(message);
+    await this.courierUtil.sendEmail(message);
 
     await this.applicationModel.findByIdAndUpdate(data.applicationId, data);
   }
